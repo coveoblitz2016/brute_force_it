@@ -1,0 +1,35 @@
+/**
+ * Copyright (c) 2013 - 2016, Coveo Solutions Inc.
+ */
+package com.coveo.blitz.client.util;
+
+import com.coveo.blitz.client.bot.Tile;
+import com.coveo.blitz.client.dto.GameState;
+
+public class MineUtils
+{
+    public static boolean ourMine(GameState state,
+                                  Tile tile)
+    {
+<<<<<<< mine
+        Tile ourMine;
+
+        switch (state.getHero().getId()) {
+            case 1:
+                ourMine = tile.MinePlayer1;
+            case 2:
+                ourMine = tile.MinePlayer2;
+            case 3:
+                ourMine = tile.MinePlayer3;
+            case 4:
+                ourMine = tile.MinePlayer4;
+            default:
+                ourMine = Tile.MineNeutral;
+        }
+
+        return tile.getSymbol().equals(ourMine.getSymbol());
+=======
+        return tile.isMine() && tile.getSymbol().endsWith(Integer.toString(state.getHero().getId()));
+>>>>>>> theirs
+    }
+}
